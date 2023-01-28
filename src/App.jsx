@@ -48,7 +48,7 @@ function App() {
       {isLoading ? (
         <div className="weatherbg loading">
           <video className=" loading" autoPlay loop muted>
-            <source src="src/assets/bgvideos/loading.mp4" type="video/mp4" />
+            <source src="/bgvideos/loading.mp4" type="video/mp4" />
           </video>
         </div>
       ) : (
