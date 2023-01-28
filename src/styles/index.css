@@ -1,0 +1,53 @@
+/* --- RESET --- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+h1,h2,h3,h4,p,ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  scale: 1.5;
+}
+
+
+button{ 
+  display: block;
+  border: none;
+  background-color: rgba(23, 26, 32, 0.8); 
+  border-radius: 6px; 
+  color: #fff; 
+  font-size: 0.9rem;
+  height: 36px; 
+  margin-left: 8px; 
+  margin-right: 6px; 
+  min-width: 185px; 
+  padding: 0 16px 0 16px; 
+  color:white; 
+  cursor: pointer; 
+  } 
+  
+  button:hover{ 
+  background-color: rgba(23, 26, 32, 1); 
+  } 
+  
