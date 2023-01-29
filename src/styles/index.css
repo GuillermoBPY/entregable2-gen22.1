@@ -2,6 +2,7 @@
 * {
   box-sizing: border-box;
   user-select: none;
+  color: rgb(255, 255, 255);
 }
 
 html {
@@ -54,11 +55,4 @@ button {
 
 button:hover {
   background-color: rgba(23, 26, 32, 1);
-}
-
-.loadinginfo__btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }

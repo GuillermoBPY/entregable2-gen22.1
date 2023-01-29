@@ -80,15 +80,17 @@ video {
   z-index: 5;
 }
 
-.loading__advice {
-  padding: 1rem;
-  max-width: 350px;
+.loading__card {
+  width: 80%;
+  max-width: 400px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
+  justify-content: center;
   text-align: center;
-  gap: 1rem;
+  gap: 2rem;
+  padding: 2rem;
   position: absolute;
-  top: 35%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(255, 255, 255, 0.2);
@@ -98,6 +100,7 @@ video {
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
 
 @media (min-width: 700px) {
   :root {

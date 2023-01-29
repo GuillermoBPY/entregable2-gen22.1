@@ -41,15 +41,33 @@ function App() {
     }
   }, [coords]);
 
+  const [permission, setpermission] = useState(false);
+
   useEffect(() => {
     navigator.permissions
       .query({ name: "geolocation" })
       .then((permissionStatus) => {
         if (permissionStatus.state === "granted") {
+          setpermission(true);
           navGeoPos();
         }
       });
   }, []);
+
+  const getpermision = () => {
+    if (!permission)
+      return (
+        <div className="loading__card">
+          <button onClick={navGeoPos} className="loading__card--btn">
+            Enable Location
+          </button>
+          <h3 className="loading__card--advice">
+            Please, enable location permission in your browser to fully use
+            Weather App
+          </h3>
+        </div>
+      );
+  };
 
   return (
     <div className="App">
@@ -58,13 +76,7 @@ function App() {
           <video className=" loading" autoPlay loop muted>
             <source src="/bgvideos/loading.mp4" type="video/mp4" />
           </video>
-          <button onClick={navGeoPos} className="loadinginfo__btn">
-            Enable Location
-          </button>
-          <h3 className="loading__advice">
-            Please, enable location permission in your browser to fully use
-            Weather App
-          </h3>
+          {getpermision()}
         </div>
       ) : (
         <WeatherApp weather={weather} temperature={temperature} />
