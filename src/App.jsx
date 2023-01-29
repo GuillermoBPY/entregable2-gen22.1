@@ -10,15 +10,18 @@ function App() {
   const [temperature, settemperature] = useState();
   const [isLoading, setisLoading] = useState(true);
 
-  useEffect(() => {
-    const success = (pos) => {
-      const ubication = {
-        latitude: pos.coords.latitude,
-        longitude: pos.coords.longitude,
-      };
-
-      setcoords(ubication);
+  const success = (pos) => {
+    const ubication = {
+      latitude: pos.coords.latitude,
+      longitude: pos.coords.longitude,
     };
+
+    setcoords(ubication);
+  };
+  const navGeoPos = () => navigator.geolocation.getCurrentPosition(success);
+
+  useEffect(() => {
+    success;
     navigator.geolocation.getCurrentPosition(success);
   }, []);
 
@@ -47,9 +50,16 @@ function App() {
     <div className="App">
       {isLoading ? (
         <div className="weatherbg loading">
+          <h3 className="loading__advice">
+            Please, enable location permission in your browser to fully use
+            Weather App
+          </h3>
           <video className=" loading" autoPlay loop muted>
             <source src="/bgvideos/loading.mp4" type="video/mp4" />
           </video>
+          <button onClick={navGeoPos} className="loadinginfo__btn">
+            Enable Location
+          </button>
         </div>
       ) : (
         <WeatherApp weather={weather} temperature={temperature} />

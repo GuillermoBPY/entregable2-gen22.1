@@ -23,15 +23,21 @@ const WeatherApp = ({ weather, temperature }) => {
           <h3>{weather?.weather[0].description}</h3>
           <ul>
             <li>
-              <span><i class='bx bxl-tailwind-css' ></i> Wind Speed: </span>
+              <span>
+                <i className="bx bxl-tailwind-css"></i> Wind Speed:{" "}
+              </span>
               {weather?.wind.speed} m/s
             </li>
             <li>
-              <span><i class='bx bx-cloud'></i> Clouds: </span>
+              <span>
+                <i className="bx bx-cloud"></i> Clouds:{" "}
+              </span>
               {weather?.clouds.all} %
             </li>
             <li>
-              <span><i class='bx bx-vertical-bottom'></i> Pressure: </span>
+              <span>
+                <i className="bx bx-vertical-bottom"></i> Pressure:{" "}
+              </span>
               {weather?.main.pressure} hPa
             </li>
           </ul>
@@ -40,14 +46,17 @@ const WeatherApp = ({ weather, temperature }) => {
       <footer className="weathercard__footer">
         <h3>Temperature</h3>
         {isCelsius ? (
-          <p><i class='bx bxs-thermometer'></i> {temperature?.celsius} °C</p>
+          <p>
+            <i className="bx bxs-thermometer"></i> {temperature?.celsius} °C
+          </p>
         ) : (
-          <p><i class='bx bxs-thermometer'></i> {temperature?.farenheit} °F</p>
+          <p>
+            <i className="bx bxs-thermometer"></i> {temperature?.farenheit} °F
+          </p>
         )}
         <button onClick={handleTemperature}>
           {isCelsius ? "Change to °F" : "Change to °C"}
         </button>
-        <button onClick={() => window.location.reload(false)}>Click to reload!</button>
       </footer>
     </section>
   );
