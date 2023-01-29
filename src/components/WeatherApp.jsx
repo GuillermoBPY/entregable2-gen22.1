@@ -3,20 +3,6 @@ import React, { useEffect, useState } from "react";
 const WeatherApp = ({ weather, temperature }) => {
   const [isCelsius, setisCelsius] = useState(true);
   const handleTemperature = () => setisCelsius(!isCelsius);
-  const [time, setTime] = useState(new Date());
-
-  function usertime() {
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setTime(new Date());
-      }, 1000);
-
-      return () => clearInterval(interval);
-    }, []);
-
-    return <p>{time.toLocaleTimeString()}</p>;
-  }
-
   return (
     <section className="weathercard">
       <div className="weathercard__titol">
@@ -24,7 +10,6 @@ const WeatherApp = ({ weather, temperature }) => {
         <h2>
           {weather?.name}, {weather?.sys.country}
         </h2>
-        <div>{usertime()}</div>
       </div>
       <div className="weathercard__body">
         <figure className="weathercard__body--figure">
