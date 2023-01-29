@@ -24,6 +24,9 @@
 }
 
 .weathercard__titol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   text-align: center;
 }
 .weathercard__body {
