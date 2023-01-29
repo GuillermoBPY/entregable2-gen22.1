@@ -11,6 +11,7 @@ const BgVideo = ({weather}) => {
     Dust:<video autoPlay loop muted><source src="bgvideos/bgday/Dust.mp4" type="video/mp4" /></video>,
     Fog:<video autoPlay loop muted><source src="bgvideos/bgday/Fog.mp4" type="video/mp4" /></video>,
     Haze:<video autoPlay loop muted><source src="bgvideos/bgday/Haze.mp4" type="video/mp4" /></video>,
+    Mist:<video autoPlay loop muted><source src="bgvideos/bgday/Mist.mp4" type="video/mp4" /></video>,
     Rain:<video autoPlay loop muted><source src="bgvideos/bgday/Rain.mp4" type="video/mp4" /></video>,
     Sand:<video autoPlay loop muted><source src="bgvideos/bgday/Sand.mp4" type="video/mp4" /></video>,
     Smoke:<video autoPlay loop muted><source src="bgvideos/bgday/Smoke.mp4" type="video/mp4" /></video>,

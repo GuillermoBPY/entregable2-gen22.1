@@ -21,11 +21,6 @@ function App() {
   const navGeoPos = () => navigator.geolocation.getCurrentPosition(success);
 
   useEffect(() => {
-    success;
-    navigator.geolocation.getCurrentPosition(success);
-  }, []);
-
-  useEffect(() => {
     if (coords) {
       const apiKey = "da6e98f8f39ec5dba4e442e9b538f8af";
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.latitude}&lon=${coords.longitude}&appid=${apiKey}`;
@@ -46,20 +41,30 @@ function App() {
     }
   }, [coords]);
 
+  useEffect(() => {
+    navigator.permissions
+      .query({ name: "geolocation" })
+      .then((permissionStatus) => {
+        if (permissionStatus.state === "granted") {
+          navGeoPos();
+        }
+      });
+  }, []);
+
   return (
     <div className="App">
       {isLoading ? (
         <div className="weatherbg loading">
-          <h3 className="loading__advice">
-            Please, enable location permission in your browser to fully use
-            Weather App
-          </h3>
           <video className=" loading" autoPlay loop muted>
             <source src="/bgvideos/loading.mp4" type="video/mp4" />
           </video>
           <button onClick={navGeoPos} className="loadinginfo__btn">
             Enable Location
           </button>
+          <h3 className="loading__advice">
+            Please, enable location permission in your browser to fully use
+            Weather App
+          </h3>
         </div>
       ) : (
         <WeatherApp weather={weather} temperature={temperature} />
