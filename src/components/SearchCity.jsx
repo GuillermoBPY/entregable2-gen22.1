@@ -1,6 +1,5 @@
 import React from "react";
 import InputCountry from "./InputCountry";
-import PruebaBuscador from "./PruebaBuscador";
 
 const SearchCity = ({ setcity, setcityCode }) => {
   const handledSubmit = (e) => {
@@ -26,7 +25,6 @@ const SearchCity = ({ setcity, setcityCode }) => {
       <form className="searchbox__form" onSubmit={handledSubmit}>
         <input type="text" placeholder="City Name..." />
         <InputCountry />
-        <PruebaBuscador />
         <button>Search</button>
         <button onClick={reset}>Reset to my location</button>
       </form>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import SearchCity from "./SearchCity";
 
 const WeatherApp = ({ weather, temperature, setcity, setcityCode }) => {
