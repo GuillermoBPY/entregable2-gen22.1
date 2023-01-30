@@ -92,6 +92,15 @@ function App() {
         />
       )}
       <BgVideo weather={weather} />
+      <div className="codedby">
+        <a
+          href="https://github.com/GuillermoBPY/entregable2-gen22.1"
+          target={"_blank"}
+        >
+          <i class="bx bxl-github"></i>
+          <p>CODED BY GUILLERMOBPY</p>
+        </a>
+      </div>
     </div>
   );
 }

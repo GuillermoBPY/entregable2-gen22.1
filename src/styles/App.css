@@ -6,8 +6,10 @@
 .App {
   min-height: 100%;
   width: 100%;
-  display: grid;
-  place-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: rgb(255, 255, 255);
 }
 .weathercard {
@@ -138,9 +140,22 @@ video {
 .searchbox__form--select {
   width: 100%;
 }
+
+.codedby {
+  background-color: rgba(96, 96, 96, 0.358);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+}
+.codedby p {
+  margin-left: 0.5rem;
+  display: inline-block;
+}
 @media (min-width: 700px) {
   :root {
-    font-size: 20px;
+    font-size: 18px;
   }
   .weathercard__body {
     gap: 3rem;
