@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const BgVideo = ({ weather }) => {
   const defaultbg = (
     <video autoPlay loop muted>
-      <source src="bgvideos/default.mp4" type="video/mp4" />
+      <source src="bgvideos/loading.mp4" type="video/mp4" />
     </video>
   );
 
