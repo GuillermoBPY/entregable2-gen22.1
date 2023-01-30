@@ -14,6 +14,10 @@ body {
   padding: 0 1rem;
 }
 
+#root {
+  height: 100%;
+}
+
 h1,
 h2,
 h3,

@@ -3,9 +3,11 @@ import React from "react";
 const SearchCity = ({ setcity }) => {
   const handledSubmit = (e) => {
     e.preventDefault();
+    if(!e.target[0].value) swal("Please, enter a City")
+    if(e.target[0].value){
     setcity(e.target[0].value.toUpperCase());
     e.target[0].value = "";
-  };
+  }};
 
   const reset = (e) => {
     e.preventDefault();
