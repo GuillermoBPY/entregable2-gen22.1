@@ -11,7 +11,7 @@
   color: rgb(255, 255, 255);
 }
 .weathercard {
-  padding: 1rem;
+  padding: 0rem 1rem;
   min-width: 325px;
   max-width: 500px;
   display: flex;
@@ -120,7 +120,8 @@ video {
   width: 100%;
 }
 
-.searchbox__form input {
+.searchbox__form input,
+.searchbox__form--select {
   padding-left: 0.5rem;
   height: 2rem;
   font-size: 1rem;
@@ -133,7 +134,8 @@ video {
 }
 
 .searchbox__form input,
-.searchbox__form button {
+.searchbox__form button,
+.searchbox__form--select {
   width: 100%;
 }
 

@@ -12,6 +12,7 @@ function App() {
   const [isLoading, setisLoading] = useState(true);
   const [permission, setpermission] = useState(false);
   const [city, setcity] = useState(false);
+  const [cityCode, setcityCode] = useState();
 
   const success = (pos) => {
     const ubication = {
@@ -28,7 +29,7 @@ function App() {
       const apiKey = "da6e98f8f39ec5dba4e442e9b538f8af";
       let url = "";
       city
-        ? (url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
+        ? (url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${cityCode}&appid=${apiKey}`)
         : (url = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.latitude}&lon=${coords.longitude}&appid=${apiKey}`);
       axios
         .get(url)
@@ -87,6 +88,7 @@ function App() {
           weather={weather}
           temperature={temperature}
           setcity={setcity}
+          setcityCode={setcityCode}
         />
       )}
       <BgVideo weather={weather} />
