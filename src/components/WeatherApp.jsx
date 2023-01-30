@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import SearchCity from "./SearchCity";
 
-const WeatherApp = ({ weather, temperature }) => {
+const WeatherApp = ({ weather, temperature, setcity }) => {
   const [isCelsius, setisCelsius] = useState(true);
   const handleTemperature = () => setisCelsius(!isCelsius);
   return (
@@ -56,6 +57,7 @@ const WeatherApp = ({ weather, temperature }) => {
         <button onClick={handleTemperature}>
           {isCelsius ? "Change to °F" : "Change to °C"}
         </button>
+        <SearchCity setcity={setcity} />
       </footer>
     </section>
   );

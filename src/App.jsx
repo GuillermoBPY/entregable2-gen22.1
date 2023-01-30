@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import BgVideo from "./components/BgVideo";
+import swal from "sweetalert";
 import WeatherApp from "./components/WeatherApp";
 import "./styles/App.css";
 
@@ -9,6 +10,8 @@ function App() {
   const [weather, setweather] = useState(false);
   const [temperature, settemperature] = useState();
   const [isLoading, setisLoading] = useState(true);
+  const [permission, setpermission] = useState(false);
+  const [city, setcity] = useState(false);
 
   const success = (pos) => {
     const ubication = {
@@ -21,9 +24,12 @@ function App() {
   const navGeoPos = () => navigator.geolocation.getCurrentPosition(success);
 
   useEffect(() => {
-    if (coords) {
+    if (coords || city) {
       const apiKey = "da6e98f8f39ec5dba4e442e9b538f8af";
-      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.latitude}&lon=${coords.longitude}&appid=${apiKey}`;
+      let url = "";
+      city
+        ? (url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
+        : (url = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.latitude}&lon=${coords.longitude}&appid=${apiKey}`);
       axios
         .get(url)
         .then((ress) => {
@@ -37,11 +43,9 @@ function App() {
           settemperature(obj);
           setisLoading(false);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => swal("Sorry, location not found"));
     }
-  }, [coords]);
-
-  const [permission, setpermission] = useState(false);
+  }, [coords, city]);
 
   useEffect(() => {
     navigator.permissions
@@ -79,7 +83,11 @@ function App() {
           {getpermision()}
         </div>
       ) : (
-        <WeatherApp weather={weather} temperature={temperature} />
+        <WeatherApp
+          weather={weather}
+          temperature={temperature}
+          setcity={setcity}
+        />
       )}
       <BgVideo weather={weather} />
     </div>
