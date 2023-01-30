@@ -121,7 +121,7 @@ video {
 }
 
 .searchbox__form input,
-.searchbox__form--select {
+.searchbox__form--select{
   padding-left: 0.5rem;
   height: 2rem;
   font-size: 1rem;
@@ -135,10 +135,14 @@ video {
 
 .searchbox__form input,
 .searchbox__form button,
-.searchbox__form--select {
+.searchbox__form--select,
+.selecBuscador {
   width: 100%;
 }
-
+.selecBuscador{
+  color: black;
+  background-color: transparent;
+}
 @media (min-width: 700px) {
   :root {
     font-size: 20px;
