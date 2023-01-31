@@ -97,7 +97,7 @@ function App() {
           href="https://github.com/GuillermoBPY/entregable2-gen22.1"
           target={"_blank"}
         >
-          <i class="bx bxl-github"></i>
+          <i className="bx bxl-github"></i>
           <p>CODED BY GUILLERMOBPY</p>
         </a>
       </div>

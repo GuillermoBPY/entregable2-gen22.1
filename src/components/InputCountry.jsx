@@ -13,10 +13,7 @@ const InputCountry = () => {
   };
 
   return (
-    <select
-      placeholder="Select a Country..."
-      className="searchbox__form--select"
-    >
+    <select className="searchbox__form--select">
       <option className="defaultOption" value="" hidden>
         --Select a Country--
       </option>
