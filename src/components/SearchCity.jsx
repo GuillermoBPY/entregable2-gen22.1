@@ -4,9 +4,10 @@ import InputCountry from "./InputCountry";
 const SearchCity = ({ setcity, setcityCode }) => {
   const handledSubmit = (e) => {
     e.preventDefault();
-    if (!e.target[0].value) swal("Please, enter a City");
-    if (!e.target[1].value) swal("Please, select a Country");
-    if (e.target[0].value && e.target[1].value) {
+    if (!e.target[0].value) swal("Please, enter a City.");
+    if (e.target[0].value && !isNaN(Number(e.target[0].value))) swal("Please enter only unaccented alphabetical letters, A–Z or a–z.");
+    if (!e.target[1].value) swal("Please, select a Country.");
+    if (e.target[0].value && e.target[1].value && isNaN(Number(e.target[0].value))) {
       setcity(e.target[0].value.toUpperCase());
       setcityCode(e.target[1].value);
       e.target[0].value = "";
